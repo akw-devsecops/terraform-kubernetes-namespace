@@ -1,7 +1,7 @@
 resource "aws_s3_bucket" "tf_state" {
   count = var.create_state_bucket ? 1 : 0
 
-  bucket = "${kubernetes_namespace.default.metadata[0].name}-tf-state"
+  bucket = try(var.state_bucket_name, "${kubernetes_namespace.default.metadata[0].name}-tf-state")
 
   tags = var.additional_namespace_labels
 }

@@ -67,6 +67,12 @@ variable "create_state_bucket" {
   description = "Option to disable state bucket creation"
 }
 
+variable "state_bucket_name" {
+  type        = string
+  default     = null
+  description = "Option to override S3 state bucket name"
+}
+
 variable "create_iam_roles" {
   type        = bool
   default     = true

@@ -74,6 +74,7 @@ No modules.
 | <a name="input_security_level_audit"></a> [security\_level\_audit](#input\_security\_level\_audit) | Policy violations will trigger the addition of an audit annotation to the event recorded in the audit log, but are otherwise allowed. | `string` | `"restricted"` | no |
 | <a name="input_security_level_enforce"></a> [security\_level\_enforce](#input\_security\_level\_enforce) | Policy violations will cause the pod to be rejected. | `string` | `"baseline"` | no |
 | <a name="input_security_level_warn"></a> [security\_level\_warn](#input\_security\_level\_warn) | Policy violations will trigger a user-facing warning, but are otherwise allowed. | `string` | `"restricted"` | no |
+| <a name="input_state_bucket_name"></a> [state\_bucket\_name](#input\_state\_bucket\_name) | Option to override S3 state bucket name | `string` | `null` | no |
 
 ## Outputs
 
