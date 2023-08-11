@@ -25,6 +25,12 @@ variable "cpu_quota" {
   description = "CPU Quota for Namespace"
 }
 
+variable "loadbalancer_quota" {
+  type        = number
+  default     = 0
+  description = "Loadbalancer Quota for Namespace"
+}
+
 variable "ecr_repos" {
   type        = list(string)
   default     = []

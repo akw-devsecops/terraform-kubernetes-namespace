@@ -68,6 +68,7 @@ No modules.
 | <a name="input_create_state_bucket"></a> [create\_state\_bucket](#input\_create\_state\_bucket) | Option to disable state bucket creation | `bool` | `true` | no |
 | <a name="input_ecr_repo_role"></a> [ecr\_repo\_role](#input\_ecr\_repo\_role) | Adds role for cross account push | `string` | `""` | no |
 | <a name="input_ecr_repos"></a> [ecr\_repos](#input\_ecr\_repos) | Creates an ECR repository for each item passed in the list | `list(string)` | `[]` | no |
+| <a name="input_loadbalancer_quota"></a> [loadbalancer\_quota](#input\_loadbalancer\_quota) | Loadbalancer Quota for Namespace | `number` | `0` | no |
 | <a name="input_mem_quota"></a> [mem\_quota](#input\_mem\_quota) | Memory Quota for Namespace | `string` | `"2Gi"` | no |
 | <a name="input_newrelic_license_key"></a> [newrelic\_license\_key](#input\_newrelic\_license\_key) | NewRelic license key to be stored in a secret | `string` | `null` | no |
 | <a name="input_policy_boundary_arn"></a> [policy\_boundary\_arn](#input\_policy\_boundary\_arn) | ARN of IAM policy that will be used as permission boundary | `string` | `""` | no |

@@ -18,7 +18,7 @@ resource "kubernetes_resource_quota" "default" {
 
   spec {
     hard = {
-      "services.loadbalancers" = 0
+      "services.loadbalancers" = var.loadbalancer_quota
       "requests.cpu"           = var.cpu_quota
       "requests.memory"        = var.mem_quota
     }
