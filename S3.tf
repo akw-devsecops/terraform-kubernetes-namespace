@@ -1,7 +1,7 @@
 resource "aws_s3_bucket" "tf_state" {
   count = var.create_state_bucket ? 1 : 0
 
-  bucket = try(var.state_bucket_name, "${kubernetes_namespace.default.metadata[0].name}-tf-state")
+  bucket = var.state_bucket_name != null ? var.state_bucket_name : "${kubernetes_namespace.default.metadata[0].name}-tf-state"
 }
 
 resource "aws_s3_bucket_acl" "tf_states" {
