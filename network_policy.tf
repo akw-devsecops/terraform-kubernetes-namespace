@@ -87,6 +87,18 @@ resource "kubernetes_network_policy" "allow_acme" {
         }
         pod_selector {
           match_labels = {
+            "app.kubernetes.io/name" = "nginx"
+          }
+        }
+      }
+      from {
+        namespace_selector {
+          match_labels = {
+            "kubernetes.io/metadata.name" = "kube-system"
+          }
+        }
+        pod_selector {
+          match_labels = {
             "app.kubernetes.io/name" = "cert-manager"
           }
         }
