@@ -114,3 +114,15 @@ variable "security_level_warn" {
   default     = "restricted"
   description = "Policy violations will trigger a user-facing warning, but are otherwise allowed."
 }
+
+variable "create_eso_role" {
+  type        = bool
+  default     = false
+  description = "Option to disable eso role"
+}
+
+variable "eso_namespace" {
+  type        = string
+  default     = "tools"
+  description = "Namespace name of eso application"
+}

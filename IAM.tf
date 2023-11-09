@@ -159,3 +159,22 @@ resource "aws_iam_role_policy_attachment" "eks_ns_edit" {
   role       = aws_iam_role.eks_ns_edit[0].name
   policy_arn = aws_iam_policy.eks_ns_edit[0].arn
 }
+
+#############################################
+#                ESO ROLE
+#############################################
+module "eso_tools_role" {
+  count = var.create_eso_role ? 1 : 0
+
+  source  = "terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks"
+  version = "~> 5.0"
+
+  role_name = "${var.cluster_name}-eso-${var.eso_namespace}"
+
+  oidc_providers = {
+    k8s = {
+      provider_arn               = data.aws_iam_openid_connect_provider.this.arn
+      namespace_service_accounts = ["${var.eso_namespace}:eso-${var.eso_namespace}"]
+    }
+  }
+}
