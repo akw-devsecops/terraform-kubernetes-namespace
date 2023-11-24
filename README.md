@@ -65,6 +65,7 @@ No modules.
 | <a name="input_create_ecr_lifecycle"></a> [create\_ecr\_lifecycle](#input\_create\_ecr\_lifecycle) | Option to disable the ECR lifecycle policy | `bool` | `true` | no |
 | <a name="input_create_iam_roles"></a> [create\_iam\_roles](#input\_create\_iam\_roles) | Option to disable iam view/edit role | `bool` | `true` | no |
 | <a name="input_create_network_policies"></a> [create\_network\_policies](#input\_create\_network\_policies) | Option to disable network policies | `bool` | `true` | no |
+| <a name="input_create_newrelic_license_secret"></a> [create\_newrelic\_license\_secret](#input\_create\_newrelic\_license\_secret) | Option to disable NewRelic license secret creation | `bool` | `false` | no |
 | <a name="input_create_state_bucket"></a> [create\_state\_bucket](#input\_create\_state\_bucket) | Option to disable state bucket creation | `bool` | `true` | no |
 | <a name="input_ecr_repo_role"></a> [ecr\_repo\_role](#input\_ecr\_repo\_role) | Adds role for cross account push | `string` | `""` | no |
 | <a name="input_ecr_repos"></a> [ecr\_repos](#input\_ecr\_repos) | Creates an ECR repository for each item passed in the list | `list(string)` | `[]` | no |

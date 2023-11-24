@@ -61,6 +61,12 @@ variable "policy_boundary_arn" {
   description = "ARN of IAM policy that will be used as permission boundary"
 }
 
+variable "create_newrelic_license_secret" {
+  type        = bool
+  default     = false
+  description = "Option to disable NewRelic license secret creation"
+}
+
 variable "newrelic_license_key" {
   type        = string
   default     = null
