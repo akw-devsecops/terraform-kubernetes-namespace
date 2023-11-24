@@ -28,12 +28,6 @@ No modules.
 | [aws_ecr_lifecycle_policy.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecr_lifecycle_policy) | resource |
 | [aws_ecr_repository.application_repos](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecr_repository) | resource |
 | [aws_ecr_repository_policy.application_repos](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecr_repository_policy) | resource |
-| [aws_iam_policy.eks_ns_edit](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
-| [aws_iam_policy.eks_ns_view](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
-| [aws_iam_role.eks_ns_edit](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
-| [aws_iam_role.eks_ns_view](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
-| [aws_iam_role_policy_attachment.eks_ns_edit](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
-| [aws_iam_role_policy_attachment.eks_ns_view](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
 | [aws_s3_bucket.tf_state](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) | resource |
 | [aws_s3_bucket_acl.tf_states](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_acl) | resource |
 | [aws_s3_bucket_ownership_controls.tf_states](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_ownership_controls) | resource |
@@ -45,8 +39,6 @@ No modules.
 | [kubernetes_network_policy.allow_dns](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/network_policy) | resource |
 | [kubernetes_network_policy.deny_all](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/network_policy) | resource |
 | [kubernetes_resource_quota.default](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/resource_quota) | resource |
-| [kubernetes_role_binding.edit](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/role_binding) | resource |
-| [kubernetes_role_binding.view](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/role_binding) | resource |
 | [kubernetes_secret_v1.newrelic_license_key](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/secret_v1) | resource |
 | [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
 | [aws_iam_policy_document.application_repos](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
@@ -56,14 +48,11 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | EKS cluster name | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | Namespace name (e.g. sonarqube or onlineshop-dev) | `string` | n/a | yes |
-| <a name="input_region"></a> [region](#input\_region) | AWS region | `string` | n/a | yes |
 | <a name="input_additional_ecr_repo_roles"></a> [additional\_ecr\_repo\_roles](#input\_additional\_ecr\_repo\_roles) | Additional roles for cross account push | `list(string)` | `[]` | no |
 | <a name="input_additional_namespace_labels"></a> [additional\_namespace\_labels](#input\_additional\_namespace\_labels) | Additional namespace labels | `map(string)` | `{}` | no |
 | <a name="input_cpu_quota"></a> [cpu\_quota](#input\_cpu\_quota) | CPU Quota for Namespace | `string` | `"1000m"` | no |
 | <a name="input_create_ecr_lifecycle"></a> [create\_ecr\_lifecycle](#input\_create\_ecr\_lifecycle) | Option to disable the ECR lifecycle policy | `bool` | `true` | no |
-| <a name="input_create_iam_roles"></a> [create\_iam\_roles](#input\_create\_iam\_roles) | Option to disable iam view/edit role | `bool` | `true` | no |
 | <a name="input_create_network_policies"></a> [create\_network\_policies](#input\_create\_network\_policies) | Option to disable network policies | `bool` | `true` | no |
 | <a name="input_create_state_bucket"></a> [create\_state\_bucket](#input\_create\_state\_bucket) | Option to disable state bucket creation | `bool` | `true` | no |
 | <a name="input_ecr_repo_role"></a> [ecr\_repo\_role](#input\_ecr\_repo\_role) | Adds role for cross account push | `string` | `""` | no |
@@ -71,7 +60,6 @@ No modules.
 | <a name="input_loadbalancer_quota"></a> [loadbalancer\_quota](#input\_loadbalancer\_quota) | Loadbalancer Quota for Namespace | `number` | `0` | no |
 | <a name="input_mem_quota"></a> [mem\_quota](#input\_mem\_quota) | Memory Quota for Namespace | `string` | `"2Gi"` | no |
 | <a name="input_newrelic_license_key"></a> [newrelic\_license\_key](#input\_newrelic\_license\_key) | NewRelic license key to be stored in a secret | `string` | `null` | no |
-| <a name="input_policy_boundary_arn"></a> [policy\_boundary\_arn](#input\_policy\_boundary\_arn) | ARN of IAM policy that will be used as permission boundary | `string` | `""` | no |
 | <a name="input_security_level_audit"></a> [security\_level\_audit](#input\_security\_level\_audit) | Policy violations will trigger the addition of an audit annotation to the event recorded in the audit log, but are otherwise allowed. | `string` | `"restricted"` | no |
 | <a name="input_security_level_enforce"></a> [security\_level\_enforce](#input\_security\_level\_enforce) | Policy violations will cause the pod to be rejected. | `string` | `"baseline"` | no |
 | <a name="input_security_level_warn"></a> [security\_level\_warn](#input\_security\_level\_warn) | Policy violations will trigger a user-facing warning, but are otherwise allowed. | `string` | `"restricted"` | no |

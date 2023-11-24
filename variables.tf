@@ -1,13 +1,3 @@
-variable "region" {
-  description = "AWS region"
-  type        = string
-}
-
-variable "cluster_name" {
-  type        = string
-  description = "EKS cluster name"
-}
-
 variable "name" {
   type        = string
   description = "Namespace name (e.g. sonarqube or onlineshop-dev)"
@@ -55,12 +45,6 @@ variable "create_ecr_lifecycle" {
   description = "Option to disable the ECR lifecycle policy"
 }
 
-variable "policy_boundary_arn" {
-  type        = string
-  default     = ""
-  description = "ARN of IAM policy that will be used as permission boundary"
-}
-
 variable "newrelic_license_key" {
   type        = string
   default     = null
@@ -77,12 +61,6 @@ variable "state_bucket_name" {
   type        = string
   default     = null
   description = "Option to override S3 state bucket name"
-}
-
-variable "create_iam_roles" {
-  type        = bool
-  default     = true
-  description = "Option to disable iam view/edit role"
 }
 
 variable "create_network_policies" {
