@@ -26,7 +26,7 @@ resource "kubernetes_resource_quota" "default" {
 }
 
 resource "kubernetes_secret_v1" "newrelic_license_key" {
-  count = var.newrelic_license_key != null ? 1 : 0
+  count = var.create_newrelic_license_secret ? 1 : 0
 
   metadata {
     name      = "newrelic-license"

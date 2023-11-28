@@ -45,6 +45,12 @@ variable "create_ecr_lifecycle" {
   description = "Option to disable the ECR lifecycle policy"
 }
 
+variable "create_newrelic_license_secret" {
+  type        = bool
+  default     = false
+  description = "Option to disable NewRelic license secret creation"
+}
+
 variable "newrelic_license_key" {
   type        = string
   default     = null
