@@ -35,6 +35,19 @@ data "aws_iam_policy_document" "application_repos" {
       "ecr:UploadLayerPart",
     ]
   }
+
+  statement {
+    sid    = "LambdaECRImageRetrievalPolicy"
+    effect = "Allow"
+    principals {
+      type        = "Service"
+      identifiers = ["lambda.amazonaws.com"]
+    }
+    actions = [
+      "ecr:BatchGetImage",
+      "ecr:GetDownloadUrlForLayer",
+    ]
+  }
 }
 
 resource "aws_ecr_lifecycle_policy" "this" {
