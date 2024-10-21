@@ -29,7 +29,9 @@ data "aws_iam_policy_document" "application_repos" {
     }
     actions = [
       "ecr:BatchCheckLayerAvailability",
+      "ecr:BatchGetImage",
       "ecr:CompleteLayerUpload",
+      "ecr:GetDownloadUrlForLayer",
       "ecr:InitiateLayerUpload",
       "ecr:PutImage",
       "ecr:UploadLayerPart",
@@ -73,9 +75,9 @@ resource "aws_ecr_lifecycle_policy" "this" {
         rulePriority = 2
         description  = "Keep last 50 images"
         selection = {
-          tagStatus     = "any"
-          countType     = "imageCountMoreThan"
-          countNumber   = 50
+          tagStatus   = "any"
+          countType   = "imageCountMoreThan"
+          countNumber = 50
         }
         action = {
           type = "expire"
