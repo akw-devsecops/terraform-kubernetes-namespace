@@ -56,7 +56,7 @@ resource "aws_ecr_lifecycle_policy" "this" {
   for_each = { for repo, values in aws_ecr_repository.application_repos : repo => values if var.create_ecr_lifecycle }
 
   repository = each.value.name
-  policy = jsonencode({
+  policy = var.ecr_lifecycle_policy != null ? var.ecr_lifecycle_policy : jsonencode({
     rules = [
       {
         rulePriority = 1
