@@ -56,6 +56,7 @@ No modules.
 | <a name="input_create_network_policies"></a> [create\_network\_policies](#input\_create\_network\_policies) | Option to disable network policies | `bool` | `true` | no |
 | <a name="input_create_newrelic_license_secret"></a> [create\_newrelic\_license\_secret](#input\_create\_newrelic\_license\_secret) | Option to disable NewRelic license secret creation | `bool` | `false` | no |
 | <a name="input_create_state_bucket"></a> [create\_state\_bucket](#input\_create\_state\_bucket) | Option to disable state bucket creation | `bool` | `true` | no |
+| <a name="input_ecr_lifecycle_policy"></a> [ecr\_lifecycle\_policy](#input\_ecr\_lifecycle\_policy) | Custom ECR lifecycle policy in JSON format | `string` | `null` | no |
 | <a name="input_ecr_repo_role"></a> [ecr\_repo\_role](#input\_ecr\_repo\_role) | Adds role for cross account push | `string` | `""` | no |
 | <a name="input_ecr_repos"></a> [ecr\_repos](#input\_ecr\_repos) | Creates an ECR repository for each item passed in the list | `list(string)` | `[]` | no |
 | <a name="input_loadbalancer_quota"></a> [loadbalancer\_quota](#input\_loadbalancer\_quota) | Loadbalancer Quota for Namespace | `number` | `0` | no |
