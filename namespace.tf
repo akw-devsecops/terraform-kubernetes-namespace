@@ -10,6 +10,8 @@ resource "kubernetes_namespace" "default" {
 }
 
 resource "kubernetes_resource_quota" "default" {
+  count = var.create_resource_quota ? 1 : 0
+
   metadata {
     name      = "default"
     namespace = kubernetes_namespace.default.metadata[0].name
