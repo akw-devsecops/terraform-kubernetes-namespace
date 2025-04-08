@@ -3,6 +3,12 @@ variable "name" {
   description = "Namespace name (e.g. sonarqube or onlineshop-dev)"
 }
 
+variable "create_resource_quota" {
+  type        = string
+  default     = true
+  description = "Whether to create a resource quota for the namespace"
+}
+
 variable "mem_quota" {
   type        = string
   default     = "2Gi"
