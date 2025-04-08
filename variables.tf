@@ -4,7 +4,7 @@ variable "name" {
 }
 
 variable "create_resource_quota" {
-  type        = string
+  type        = bool
   default     = true
   description = "Whether to create a resource quota for the namespace"
 }
